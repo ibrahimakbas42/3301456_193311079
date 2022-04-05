@@ -1,6 +1,4 @@
-//import 'dart:convert';
 import 'dart:async';
-
 import 'package:e_sinav/sorular/bitir.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -27,8 +25,10 @@ class _SorularState extends State<Sorular> {
   int puan = 0;
   int kullanilansure = 0;
 
-  Stopwatch _sayac;
-  Timer _timer;
+  late Stopwatch _sayac;
+  late Timer _timer;
+
+  get values => null;
 
   @override
   void initState() {
@@ -154,10 +154,13 @@ class _SorularState extends State<Sorular> {
 
   @override
   Widget build(BuildContext context) {
-    var data = [];
-    data = ModalRoute.of(context).settings.arguments;
-    adSoyad = data[0];
-    ogrNo = data[1];
+    Object? data = [];
+    // var data = [];
+    data = ModalRoute.of(context)!.settings.arguments;
+    // adSoyad = data[0];
+    // ogrNo = data[1];
+    adSoyad = ['adSoyad'] as String;
+    ogrNo = ['ogrNo'] as String;
 
     _sayac.start();
     if (_sayac.elapsedMilliseconds > 9999 && mevcutsoru < 9) {
@@ -177,10 +180,15 @@ class _SorularState extends State<Sorular> {
     }
 
     List cevaplistesi = [];
-    for (var u in sorular[mevcutsoru]['cevaplar']) {
-      cevaplistesi.add(u);
+    if (sorular != null) {
+      for (var u in sorular /*[mevcutsoru]['cevaplar']*/) {
+        // Cevaplistesi cevaplistesi = Cevaplistesi(
+        // sorular[mevcutsoru];
+        // sorular('cevaplar');
+        cevaplistesi.add(u);
+      }
     }
-
+    //[mevcutsoru]['cevaplar']
     return Scaffold(
       backgroundColor: Colors.grey[350],
       body: Center(

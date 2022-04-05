@@ -25,7 +25,7 @@ class _FotoState extends State<Foto> {
 }
 
 class Fotograflar extends StatefulWidget {
-  const Fotograflar({Key key}) : super(key: key);
+  const Fotograflar({Key? key}) : super(key: key);
 
   @override
   _FotograflarState createState() => _FotograflarState();

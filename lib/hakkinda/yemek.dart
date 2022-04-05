@@ -24,7 +24,7 @@ class _YemekState extends State<Yemek> {
 }
 
 class Yemekler extends StatefulWidget {
-  const Yemekler({Key key}) : super(key: key);
+  const Yemekler({Key? key}) : super(key: key);
 
   @override
   _YemeklerState createState() => _YemeklerState();
