@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:e_sinav/sorular/bitir.dart';
+import 'package:bil_bakalim/sorular/bitir.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
